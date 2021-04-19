@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        "use strict"
+        
+        //Задание 1.
+
+        let a = 1, b = 1, c, d;
+        // Инкремент используется в качестве перфикса, соответственно, возвращает значение операнда с уже добавленной единицей
+        c = ++a;
+        console.log(c);
+        // Инкремент используется в качестве постфикса, возвращая значение операнда перед добавлением единицы
+        d = b++;
+        console.log(d);
+        /* В примере 1 мы с помощью инкремента задали операнду а значение 2. В данном случае операция идет полностью с права на лево 
+        (возможно, не полностью, но приоритет операторов одинаков), к операнду а прибавляется 1, значение становится равным 3, 3+2=5 */
+        c = 2 + ++a;
+        console.log(c);
+        // Аналогично предыдущему примеру, только в данном случае постфиксный инкремент добавляет единицу к операнду b после вычисления выражения
+        d = 2 + b++;
+        console.log(d);
+        // К операндам а и b, имеющим по условию значение 1, мы 2 раза применяли инкремент, т.о. 1+1+1=3
+        console.log(a);
+        console.log(b)
+
+        //Задание 2.
+
+        let v = 2;
+        let x = 1 + (v *= 2); /* На сколько я понял данный оператор присваивания должен выдать выражение (v = v * 2), соответственно, v = 4 
+        (операция в скобках выполняется первой), 1 + 4 = 5 */
+        console.log(x);
+
+        // Задание 3.
+        
+        let q = -10;
+        let w = 17;
+        if (q >= 0 && w >= 0) {
+            let e = q - w;
+            console.log(e);
+        }
+        else if (q < 0 && w < 0) {
+            let e = q * w;
+            console.log(e);
+        }
+        else if (q * w < 0) {
+            let e = q + w;
+            console.log(e);
+        }
+
+
+        // Задание 4.
+
+        function first (a,b) {
+            return a + b;
+        }
+
+        function second (a,b) {
+            return a - b;
+        }
+
+        function third (a,b) {
+            return a / b;
+        }
+
+        function fourth (a,b) {
+            return a * b;
+        }
+
+        // Задание 5.
+
+        function mathOperation(arg1, arg2, operation) {
+            switch(operation) {
+                case "+": 
+                    return first(arg1, arg2);
+                case "-": 
+                    return second(arg1, arg2);
+                case "/": 
+                    return third(arg1, arg2);
+                case "*": 
+                    return fourth(arg1, arg2);
+            }
+        }
+
+        console.log(mathOperation(7, 10, "+"));
+        console.log(mathOperation(7, 10, "-"));
+        console.log(mathOperation(7, 10, "/"));
+        console.log(mathOperation(7, 10, "*"));
+
+        // Задание 6.
+
+        let sum = +prompt("Введите сумму, которую хотите внести на счет.")
+        let str = String(sum);
+        let strLength = str.length;
+        let lastSymbol = str.charAt(str.length - 1);
+        if (lastSymbol == "1") {
+            alert("Ваша сумма в " + sum + " рубль успешно зачислена");
+        } else if (lastSymbol == "0" || "5" || "6" || "7" || "8" || "9") {
+            alert("Ваша сумма в " + sum + " рублей успешно зачислена");
+        } else if (lastSymbol == "1" || "2" || "3" || "4") {
+            alert("Ваша сумма в " + sum + " рубля успешно зачислена");
+        }
+
+    </script>
+
+</body>
+</html>
